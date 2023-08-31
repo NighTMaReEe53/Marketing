@@ -1,0 +1,334 @@
+.theNews {
+  .main-title {
+    h2 {
+      margin-bottom: 60px;
+    }
+  }
+  .box {
+    transition: $trans;
+    @include collection {
+      flex-direction: column;
+    }
+    &:hover {
+      transform: translateY(-5px);
+      .text h2 {
+        color: $mainColor;
+      }
+    }
+    &:first-child {
+      padding-bottom: 30px;
+    }
+    &:not(:first-child) {
+      padding: 30px 0;
+    }
+    &:not(:last-child) {
+      border-bottom: 1px solid #ccc;
+    }
+    img {
+      height: 223px;
+      width: 298px;
+      object-fit: cover;
+      @include collection {
+        width: 100%;
+      }
+    }
+    .text {
+      user-select: none;
+      .spans {
+        margin-bottom: 10px;
+        .new {
+          font-weight: bold;
+          color: $mainColor;
+          font-size: 15px;
+          border-left: 1px solid #ccc;
+          padding-left: 10px;
+        }
+        .timer {
+          font-size: 13px;
+          font-weight: 500;
+          color: $greyColor;
+        }
+      }
+      h2 {
+        font-weight: bold;
+        cursor: pointer;
+        margin-bottom: 10px;
+        transition: $trans;
+        &:hover {
+          color: $mainColor;
+        }
+      }
+      p {
+        font-weight: 500;
+        font-size: 15px;
+        max-width: 350px;
+        line-height: 1.8;
+        color: $greyColor;
+        margin-bottom: 7px;
+      }
+      .info {
+        .inf {
+          > span {
+            font-weight: bold;
+            width: 20px;
+            height: 20px;
+            background: $mainColor;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            text-transform: uppercase;
+            color: #fff;
+          }
+          p {
+            margin-bottom: 0;
+            font-size: 13px;
+            font-weight: bold;
+            margin-right: -10px;
+          }
+        }
+      }
+    }
+  }
+}
+
+.search {
+  h2 {
+    font-weight: bold;
+    font-size: 25px;
+    color: $mainColor;
+    user-select: none;
+  }
+  .form {
+    position: relative;
+    i {
+      position: absolute;
+      right: 15px;
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: 17px;
+      color: $greyColor;
+    }
+    input {
+      width: 100%;
+      padding: 7px 15px;
+      padding-right: 50px;
+      border-radius: 4px;
+      border: 1px solid #ccc;
+      outline: none;
+      transition: $trans;
+      &:focus {
+        border: 1px solid #6640f4;
+        &::placeholder {
+          transition: $trans;
+          display: none;
+        }
+      }
+    }
+  }
+}
+
+.post,
+.category,
+.insta,
+.puplic {
+  margin-top: 20px;
+  > h2 {
+    font-weight: bold;
+    color: $mainColor;
+    font-size: 25px;
+    margin-bottom: 15px;
+  }
+}
+.post {
+  .items {
+    .item {
+      display: flex;
+      align-items: center;
+      transition: $trans;
+      &:hover {
+        transform: translateX(-5px);
+        .text h4 {
+          color: $mainColor;
+        }
+      }
+      gap: 10px;
+      &:first-child {
+        padding-bottom: 30px;
+      }
+      &:not(:first-child) {
+        padding: 30px 0;
+      }
+      &:not(:last-child) {
+        border-bottom: 1px solid #ccc;
+      }
+      img {
+        width: 100px;
+        border-radius: 6px;
+      }
+      h4 {
+        font-size: 16px;
+        font-weight: bold;
+        margin-bottom: 5px;
+        user-select: none;
+        cursor: pointer;
+        transition: $trans;
+        &:hover {
+          color: $mainColor;
+        }
+      }
+      p {
+        font-weight: 500;
+        font-size: 13px;
+        color: $greyColor;
+        margin-bottom: 0;
+        user-select: none;
+      }
+    }
+  }
+}
+
+.category {
+  .list-category {
+    padding: 0;
+    margin: 0;
+    li {
+      list-style: none;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 10px 0;
+      cursor: pointer;
+      color: $greyColor;
+      transition: $trans;
+      font-size: 15px;
+      font-weight: 500;
+      .num {
+        font-weight: bold;
+      }
+      &:hover {
+        color: $mainColor;
+        transform: translateX(-5px);
+      }
+      &:not(:last-child) {
+        border-bottom: 1px solid #ccc;
+      }
+    }
+  }
+}
+
+.puplic {
+  .social {
+    i {
+      color: $greyColor;
+      width: 40px;
+      background-color: #f3f7fe;
+      height: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+      cursor: pointer;
+      transition: $trans;
+      &:hover {
+        background-color: $mainColor;
+        color: $colorWhite;
+      }
+    }
+  }
+}
+
+.insta {
+  .images {
+    .image {
+      position: relative;
+      flex-basis: 30%;
+      border-radius: 6px;
+      overflow: hidden;
+      cursor: pointer;
+      &:hover {
+        i {
+          scale: 1;
+          opacity: 1;
+        }
+      }
+      i {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.7);
+        opacity: 0;
+        scale: 0;
+        pointer-events: none;
+        transition: $trans;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #fff;
+        font-size: 20px;
+      }
+      img {
+        width: 100%;
+        height: 100px;
+        object-fit: cover;
+      }
+    }
+  }
+}
+
+.postNews {
+  margin-top: 20px;
+  background-color: #eaeef2;
+  padding: 20px;
+  border-radius: 6px;
+  .text {
+    h2 {
+      font-weight: bold;
+      font-size: 25px;
+      color: $mainColor;
+      margin-bottom: 10px;
+    }
+    p {
+      font-size: 15px;
+      color: $greyColor;
+      line-height: 1.8;
+    }
+  }
+  .form {
+    position: relative;
+    i {
+      position: absolute;
+      left: 15px;
+      top: 28%;
+      transform: translateY(-50%);
+      cursor: pointer;
+      font-size: 20px;
+    }
+    input {
+      width: 100%;
+      padding: 10px 15px;
+      border: 1px solid #ccc;
+      font-size: 15px;
+      outline: none;
+      transition: $trans;
+      border-radius: 6px;
+      &:focus {
+        border: 1px solid $mainColor;
+        &::placeholder {
+          transition: $trans;
+          opacity: 0;
+        }
+      }
+    }
+  }
+  .styleBtn {
+    width: 100%;
+    margin-top: 20px;
+    color: #fff;
+    font-weight: bold;
+    font-size: 15px;
+    border: none;
+  }
+}
